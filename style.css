@@ -1,0 +1,825 @@
+/* GENERAL */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+* {
+  margin: 0;
+  padding: 0;
+   
+}
+
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+    background-color: #121212; /* Dark mode background */
+    color: #e0e0e0; /* Light text for contrast */
+    width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: rgb(85, 85, 85);
+}
+
+/* TRANSITION */
+
+
+
+/* DESKTOP NAV */
+
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo:hover {
+  cursor: default;
+}
+
+/* HAMBURGER MENU */
+
+#hamburger-nav {
+  display: none;
+  position: fixed;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(221, 221, 221);
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(47, 47, 47, 0.774);
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(224, 224, 224);
+  text-decoration: none;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+  z-index: 9999;
+  
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon span:first-child {
+  opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+/* SECTIONS */
+section:first-of-type {
+  margin-top: 60px; /* Match the height of the navbar */
+  place-items: center;
+  background-color: #191919;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+section {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.section__pic-container {
+  height: 120px;
+  width: 120px;
+  margin: auto 0;
+}
+img {
+  overflow-clip-margin: content-box;
+  
+  overflow: clip;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Prevent the .additional-text from inheriting animations */
+
+
+.additional-text {
+  font-size: 1rem;
+  animation: none;
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center horizontally within the parent */
+  align-items: center; /* Optional: Align items vertically within the container */
+  width: 100%; /* Ensure it spans the width of its parent */
+  margin: 20px 0; /* Add spacing above and below */
+  padding: 20px;
+}
+
+.additional-text p {
+  margin: 0; /* Reset margins */
+  max-width: 50%;
+  text-align: left; /* Align text within the <p> tag to the left */
+ 
+}
+
+/* Animation for .line elements */
+.animated-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px;
+}
+
+/* Apply animation only for .line elements */
+.line {
+  display: block;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards, vibrate 2s infinite, warp 2s infinite alternate;
+}
+
+.line:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.line:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.line:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes warp {
+  0%, 100% { filter: none; }
+  50% { filter: url(#warp-filter); }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes vibrate {
+  0%, 100% { transform: translate(1px, 1px); }
+  20% { transform: translate(0px, 0px); }
+  40% { transform: translate(0px, 0px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(-1px, -1px); }
+}
+
+/* Availability section */
+.availability-status {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #3e3e3e;
+}
+
+/* Green dot with ping animation */
+.ping-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #00fc08; /* Green color */
+  margin-right: 10px; /* Space between dot and text */
+  position: relative;
+  animation: ping 1s infinite; /* Animation for the dot */
+}
+
+/* Text next to the dot */
+.availability-text {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Ping animation */
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+/* ABOUT */ 
+
+@keyframes spinClockwiseSection {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Counterclockwise spin animation */
+@keyframes spinCounterclockwiseSection {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+#about {
+  padding: 40px 20px;
+  background-color: #191919;
+  border-radius: 25px;
+
+}
+
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-image {
+  position: relative;
+  flex: 0 0 auto;
+  max-width: 300px; /* Image's maximum width */
+  margin: auto;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Round edges for the image */
+  display: block;
+}
+
+
+
+
+/* Base styles for both rings */
+.ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 1px solid transparent; /* Adjust border thickness here */
+  border-radius: 50%; /* Makes the ring circular */
+  animation-duration: 2s; /* Animation duration */
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.43, 0.21, 0, 0.37); /* Smooth spin */
+  pointer-events: none; /* Rings should not interact */
+}
+
+/* First ring with loading effect (clockwise) */
+.ring-1 {
+  border-top-color: #007BFF; /* Blue color for first ring */
+  /* width: calc(100% + 6px); /* Add size to account for border width */
+  height: calc(100% + 6px); /* Add size to account for border width */
+  animation-name: spinClockwise;
+}
+
+/* Second ring with loading effect (counterclockwise) */
+.ring-2 {
+  border-top-color: #FF5733; /* Orange color for second ring */
+  /*width: calc(100% + 10px); /* Slightly larger than the first ring */
+  height: calc(100% + 8px); /* Slightly larger than the first ring */
+  animation-name: spinCounterclockwise;
+}
+
+/* Clockwise spin animation */
+@keyframes spinClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Counterclockwise spin animation */
+@keyframes spinCounterclockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* BUTTONS */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  filter: none; /* Reset the filter */
+  animation: none; /* Prevent inheriting animations */
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: .5rem;
+  width: 8rem;
+  border-radius: 2rem;
+}
+
+.btn-color-1,
+.btn-color-2 {
+  border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+  background: rgb(0, 217, 255);
+  color: rgb(255, 255, 255);
+}
+
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+  background: none;
+  color: #ffffff;
+}
+
+.btn-color-2:hover {
+  border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-container {
+  gap: 1rem;
+}
+
+section + section {
+  margin-top: 50px; 
+}
+
+/*
+.work-showcase {
+  place-items: center;
+  background-color: #191919;
+  padding: 20px;
+  border-radius: 25px;
+}
+  */
+
+/* General Section Styling */
+#work-showcase {
+  padding: 2rem;
+  background-color: #191919;
+  padding: 20px;
+  border-radius: 25px;
+}
+.work-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Spacing between items */
+}
+
+.work-showcase-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.work-showcase-column {
+  flex: 1;
+}
+
+/* Dropdown Title */
+.dropdown-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: #202020;
+  padding: 0.8rem;
+  border-radius: 25px;
+  border: .25px solid #39393956;
+  margin-bottom: 1rem;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.dropdown-title:hover {
+  background: rgb(0, 217, 255);
+}
+.dropdown {
+  flex: 1 1 calc(50% - 1rem); /* 50% width, minus gap */
+  box-sizing: border-box;
+}
+
+/* Hidden Dropdown Content */
+.dropdown-content {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  background-color: #191919;
+
+  border-radius: 5px;
+}
+
+.dropdown-content li {
+  padding: 0.8rem;
+  border-bottom: .25px solid #00000075;
+}
+
+.dropdown-content li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content.open {
+  max-height: 100%; /* Adjust depending on content */
+}
+
+.experience-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 20px;
+}
+
+
+
+
+.experience-entry {
+  background: #202020;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: .25px solid #39393956;
+}
+
+.job-title h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #1fc1e9;;
+}
+
+.job-title p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.job-dates {
+  font-style: italic;
+  color: #888;
+}
+
+.job-details {
+  margin-top: 1rem;
+}
+
+.toggle-details {
+  background: rgb(33, 33, 33);
+  color: #ffffff;
+  font-size: 0.9rem;
+  padding: 0.6rem 2rem;
+  border: none;
+  border-radius: 45px;
+  border: 2px solid #ffffff8b;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-details:hover {
+  background: #0dabd2;
+  color: #fff;
+}
+
+.details-content {
+  margin: 1rem 0;
+  padding: 0;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  display: none; /* Initially hidden */
+  color: #ddd;
+}
+
+.key-technologies {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+
+
+
+
+#project-work {
+  padding: 2rem;
+  background-color: #191919;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.project-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background-color: #171717;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+  width: 50%;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #00d9ff;
+}
+
+.project-description,
+.project-technologies {
+  font-size: 1rem;
+  color: #d1d1d1;
+  margin-bottom: 1rem;
+}
+
+.project-button-container {
+    flex-direction: column;
+    gap: 1.5rem;
+
+}
+
+
+
+
+
+
+footer {
+ 
+  padding: 20px;
+}
+
+.work-showcase {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.footer-column h4 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.footer-column li {
+  margin: 5px 0;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #007BFF;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #0056b3;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #191919;
+  font-size: 0.85em;
+  color: #fff;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+
+
+
+
+/* General modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: left;
+  z-index: 1000;
+  
+}
+
+.modal.open {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modal-content {
+  background: #191919;
+  padding: 90px;
+  border-radius: 25px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  margin-bottom: 10px;
+}
+
+.contact-button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.contact-button:hover {
+  background-color: #0056b3;
+}
+
+.close-button {
+  padding: 8px 16px;
+  background-color: #FF5733;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #cc462a;
+}

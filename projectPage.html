@@ -3,45 +3,310 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+
     <link rel="stylesheet" href="projectPage.css">
+
     <title>Yabi | Implementation Specialist</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
-  </head>   
+
+      <style>
+
+     .title {
+        font-size: 66px;
+        font-weight: bold;
+        text-align: center;
+        overflow: hidden; /* Ensure spans are contained within the title */
+        margin-bottom: 20px; /* Add margin below the title */
+    }
+                      /* Home Button */
+        .home-button {
+            display: block;
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            width: 100px; /* Narrowed the button */
+            padding: 10px 20px;
+            font-size: 18px;
+            text-align: center;
+            color: #ffffff;
+
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            text-decoration: none; /* Remove underline */
+            cursor: pointer; /* Add cursor pointer */
+            opacity: 1; /* Start with full opacity */
+            visibility: visible; /* Start with visible */
+        }
+    .color-span {
+        display: inline-block;
+        transition: color 0.5s ease-in-out; /* Smooth color transition */
+    }
+
+    /* Add padding to spans on mobile */
+    @media screen and (max-width: 768px) {
+        .color-span {
+            padding: 0 10px; /* Adjust padding as needed */
+        }
+    }
+
+              /* Code block container */
+    .code-block {
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        overflow-x: auto; /* Enable horizontal scroll if needed */
+    }
+
+    /* Code block preformatted text */
+    .code-block pre {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #333;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    /* Code block syntax highlighting */
+    .code-block pre code {
+        display: block;
+        padding: 10px;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+    }
+
+    /* Example styles for specific code highlighting */
+    .code-block pre code.html { /* HTML code */
+        color: #c41a16;
+    }
+    .code-block pre code.css { /* CSS code */
+        color: #1f61a3;
+    }
+    .code-block pre code.js { /* JavaScript code */
+        color: #2d810d;
+    }
+              .pastel-orange-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #FFB347; /* Pastel orange color */
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 20px; /* Rounded corners */
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    .pastel-orange-button:hover {
+        background-color: #FFA500; /* Slightly darker pastel orange */
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .article {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2, h3 {
+        color: #333;
+    }
+
+    p {
+        color: #666;
+    }
+
+    .author-info {
+        font-style: italic;
+        color: #888;
+    }
+
+    .date-info {
+        color: #888;
+    }
+
+    .tags {
+        margin-top: 10px;
+    }
+
+    .tag {
+        display: inline-block;
+        background-color: #ffa500;
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin-right: 5px;
+        font-size: 0.9em;
+    }
+    .footer {
+        background-color: #0F0F0F;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .footer p {
+        margin: 5px 0;
+    }
+
+    .footer a {
+        color: #0F0F0F;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    .social-icons a {
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 20px;
+        color: #fff;
+    }
+        .home-button {
+            display: block;
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            width: 100px; /* Narrowed the button */
+            padding: 10px 20px;
+            font-size: 18px;
+            text-align: center;
+            color: #ffffff;
+            background-color: black;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            text-decoration: none; /* Remove underline */
+            cursor: pointer; /* Add cursor pointer */
+            opacity: 1; /* Start with full opacity */
+            visibility: visible; /* Start with visible */
+            z-index: 9999; /* Ensure it's on top of other elements */
+        }
+
+        .home-button.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+      </style>
+
+
+  </head>
   <body>
-    <header>
-      <div class="container">
-        <h2><span>y</span>h</h2>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="./projectPage.html">Projects</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-        <button class="hamburger">
-          <div class="bar"></div>
-        </button>
-      </div>
-    </header>
-    <nav class="mobile-nav">
-      <a href="./index.html">Home</a>
-      <a href="./projectPage.html">Projects</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
+
+<a href="home.html" style="background-color: #0F0F0F;" class="home-button">Home</a>
+
     <main>
-        <h1>Multi-AZ Highly Available, and Fault Tolerant Architecture.</h1>
-        <p>
-            High availability, and fault tolerance are characterized by a few unique properties. 
-            A highly available cloud infrastructure incorporates elasticity in its resources to adjust to internet traffic. 
-            Fault Tolerane is characterized by redundancy in its infrastructure to prevent any downtime. 
-            A system can be highly available without being fault tolerant, and vice versa. The cloud architecture below incorporates both to ensure a given application experience zero downtime. 
+            <div class="title">
+                <span class="color-span">THE</span>
+                <span class="color-span">HIGHLY</span>
+                <span class="color-span">AVAILABLE</span>
+                <span class="color-span">&</span>
+                <span class="color-span">FAULT</span>
+                <span class="color-span">TOLERANT</span>
+                <span class="color-span">PLATFORM</span>
+            </div>
+        <p style="font-size: 40px;">
+            Elastic, Secure, Cloud Infrastructure.
         </p>
-        <img src="demo.png">
-        <h2>The code:</h2>
+        <div style="text-align: center;padding-bottom: 30px;" >
+            <img src="../assets/demo.png" style="padding-bottom: 30px;">
+            <a href="https://github.com/YabiSkywalker/Highly-Available-Fault-Tolerant-Architecture"  class="pastel-orange-button">GitHub</a>
+        </div>
+
     </main>
+
+     <div class="article" style="text-align: center;">
+        <h1>Achieving High Availability</h1>
+        <p style="text-align: left;">
+            High availability is characterized by a system's ability to operate with little to no downtime.
+            A highly available platform may not necessarily look like the architecture above. As always the business need drives the solution; therefore, even a simple autoscaling group with a load balancer
+            in front of it could be considered highly available - so long as it successfully delivers the underlying content through unexpected events.
+        </p>
+        <p>
+
+        </p>
+        <h2>High Availability vs Fault Tolerance</h2>
+        <p style="text-align: left;">
+            All highly available systems incorporate some degree of redundancy. Redundancy is what makes a system Fault Tolerant. Typically, you'll see redundancy implemented in key components such as servers, and databases.
+            </p>
+        <p style="text-align: left;" >
+            For a system to be highly available it must be fully operational at all times with little to no failures. On the other hand, when a system is fault-tolerant it means that it will withstand failures.
+        </p>
+        <p style="text-align: left;">
+            As the system grows, we often split it into tiers (also known as layers), which sets it on the path of greater scale and availability.
+        </p>
+        <h3 style="padding-top: 20px; text-align: center;">This use case:</h3>
+        <p style="text-align: left;">
+            In this instance we have a microservice running within an Auto Scaling Group (ASG) fronted by a load balancer (LB). The microservice does not need to access the internet as it's primary function is to log entries into a database.
+            While it is not necessary, there are NAT gateways configured within public subnets to provide the application internet access. Internet access is provided by an Internet Gateway (IGW), which the NAT gateways use.
+            The ASG is configured to expand, and contract based off limits specified within the terraform modules. In addition to this there is an Aurora database configured with asynchronous multi-az replication to provide redundancy.
+        </p>
+
+    </div>
+
+    <footer class="footer" style="padding-top: 50px;">
+        <p>&copy; 2023 Yabsera Gebrekidan. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="home.html" target="_blank">Home</a>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/gyabsera/?hl=en" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/yabi/" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
     <script src="./main.js"></script>
+      <script>
+        const colorSpans = document.querySelectorAll('.color-span');
+
+        function changeColor() {
+            const time = new Date().getTime();
+            const colors = [
+                `rgb(${Math.sin(time / 1000) * 127 + 128}, ${Math.sin(time / 500) * 127 + 128}, ${Math.sin(time / 300) * 127 + 128})`,
+                `rgb(${Math.sin(time / 400) * 127 + 128}, ${Math.sin(time / 600) * 127 + 128}, ${Math.sin(time / 800) * 127 + 128})`,
+                `rgb(${Math.sin(time / 700) * 127 + 128}, ${Math.sin(time / 900) * 127 + 128}, ${Math.sin(time / 1000) * 127 + 128})`,
+                `rgb(${Math.sin(time / 600) * 127 + 128}, ${Math.sin(time / 800) * 127 + 128}, ${Math.sin(time / 500) * 127 + 128})`,
+                `rgb(${Math.sin(time / 800) * 127 + 128}, ${Math.sin(time / 1000) * 127 + 128}, ${Math.sin(time / 400) * 127 + 128})`
+            ];
+
+            colorSpans.forEach((span, index) => {
+                span.style.color = colors[index % colors.length];
+            });
+        }
+
+        setInterval(changeColor, 100); // Update colors every 100 milliseconds
+    </script>
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const homeButton = document.querySelector(".home-button");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > window.innerHeight / 2) {
+            homeButton.classList.add("hidden");
+        } else {
+            homeButton.classList.remove("hidden");
+        }
+    });
+});
+
+    </script>
+  <script src="main.js"></script>
   </body>
 </html>
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typewriter Animation</title>
+<style>
+    body {
+        background-color: black; /* Dark background color */
+        color: #ffffff; /* Text color */
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+    .title {
+        font-size: 66px;
+        font-weight: bold;
+        text-align: center;
+        overflow: hidden; /* Ensure spans are contained within the title */
+        margin-bottom: 20px; /* Add margin below the title */
+    }
+
+    .color-span {
+        display: inline-block;
+        transition: color 0.5s ease-in-out; /* Smooth color transition */
+    }
+
+    /* Additional styles for the button */
+    .orange-btn {
+        display: block;
+        width: 200px;
+        padding: 20px;
+        background-color: white;
+        color: black;
+        text-align: center;
+        font-size: 21px;
+        font-family: sans-serif;
+        font-weight: bold;
+        border-radius: 10px;
+        margin: 0 auto 30px; /* Center horizontally and add margin below */
+    }
+</style>
+
+</head>
+<body>
+<div class="og">
+    <div class="og2">
+        <div class="parent">
+            <div class="title">
+                <span class="color-span">THE</span>
+                <span class="color-span">HIGHLY</span>
+                <span class="color-span">AVAILABLE</span>
+                <span class="color-span">&</span>
+                <span class="color-span">FAULT</span>
+                <span class="color-span">TOLERANT</span>
+                <span class="color-span">PLATFORM</span>
+            </div>
+            <!-- Orange button -->
+            <div class="orange-btn">LEARN MORE</div>
+        </div>
+   </div>
+</div>
+    <script>
+        const colorSpans = document.querySelectorAll('.color-span');
+
+        function changeColor() {
+            const time = new Date().getTime();
+            const colors = [
+                `rgb(${Math.sin(time / 1000) * 127 + 128}, ${Math.sin(time / 500) * 127 + 128}, ${Math.sin(time / 300) * 127 + 128})`,
+                `rgb(${Math.sin(time / 400) * 127 + 128}, ${Math.sin(time / 600) * 127 + 128}, ${Math.sin(time / 800) * 127 + 128})`,
+                `rgb(${Math.sin(time / 700) * 127 + 128}, ${Math.sin(time / 900) * 127 + 128}, ${Math.sin(time / 1000) * 127 + 128})`,
+                `rgb(${Math.sin(time / 600) * 127 + 128}, ${Math.sin(time / 800) * 127 + 128}, ${Math.sin(time / 500) * 127 + 128})`,
+                `rgb(${Math.sin(time / 800) * 127 + 128}, ${Math.sin(time / 1000) * 127 + 128}, ${Math.sin(time / 400) * 127 + 128})`
+            ];
+
+            colorSpans.forEach((span, index) => {
+                span.style.color = colors[index % colors.length];
+            });
+        }
+
+        setInterval(changeColor, 100); // Update colors every 100 milliseconds
+    </script>
+</body>
+</html>

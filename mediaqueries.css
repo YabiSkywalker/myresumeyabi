@@ -1,0 +1,188 @@
+/* General Media Query Adjustments */
+@media screen and (min-width: 1200px) {
+
+  .project-image {
+    width: 50%;
+}
+
+}
+
+/* Medium Screens */
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+
+  section {
+
+  }
+
+}
+
+/* Small Screens */
+@media screen and (max-width: 768px) {
+
+  #desktop-nav {
+    display: none;
+  }
+
+  .hamburger-menu {
+    position: initial; 
+    display: inline-block;
+}
+  
+  #hamburger-nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #121212;
+    padding: 1rem;
+  }
+  .menu-links {
+    width: 105%;
+    text-align: center;
+    background-color: #121212;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .project-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Extra Small Screens */
+@media screen and (max-width: 600px) {
+
+  section:first-of-type {
+    margin-top: 150px; /* Match the height of the navbar */
+  }
+
+  section {
+    max-width: 80%; /* Use a percentage for small screens */
+    padding: 10px; /* Reduce padding for tighter spaces */
+  }
+
+  .animated-text {
+    font-size: 2.25rem;
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers all child elements horizontally */
+    text-align: center; 
+  }
+  
+  .additional-text {
+    font-size: .75rem;
+     
+    
+  }
+  .additional-text p {
+    max-width: 100%;
+  }
+
+  .availability-status {
+    font-size: .75rem;
+
+  }
+
+  .btn-container {
+    flex-direction: column; /* Stack buttons vertically on small devices */
+    gap: 0.5rem; /* Reduce spacing between buttons */
+  }
+
+  .btn {
+    padding: 0.3rem; /* Reduce padding */
+    width: 10rem; /* Reduce button width */
+    font-size: 0.9rem; /* Scale down font size */
+  }
+
+
+  .work-showcase-container {
+    flex-direction: column; /* Stack columns vertically */
+    gap: 0rem; /* Reduce spacing between stacked columns */
+  }
+
+  .work-showcase-column {
+    flex: 1 1 100%; /* Full width for each column */
+  }
+
+  
+  .experience-logo {
+text-align: center;
+font-size: 1rem;
+  }
+
+  .bandera-case-study {
+    text-align: center;
+    border-radius: 10px;
+  }
+  .bandera-headline {
+    font-size: .75rem;
+    font-weight: bold;
+     
+  }
+
+  .experience-container {
+    padding: .1rem;
+  }
+
+  .job-title h3 {
+    font-size: 1rem;
+  }
+
+  .job-title p {
+    font-size: .75rem;
+}
+
+  .toggle-details {
+    font-size: 0.8rem;
+  }
+
+  .details-content {
+    font-size: 1rem;
+  }
+
+
+  .project-image {
+    width: 80%;
+}
+
+
+.project-button-container {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+  align-items: center;
+}
+
+#project-work {
+  padding: 1rem;
+}
+
+.about-text {
+  margin-right: 0px;
+}
+
+
+
+.about-content {
+  flex-direction: column;
+  text-align: center;
+}
+
+.about-image {
+  margin-top: 20px;
+}
+
+}
+
+
+

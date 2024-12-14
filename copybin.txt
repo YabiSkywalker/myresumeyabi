@@ -1,0 +1,939 @@
+
+
+
+
+
+sync command: 
+
+aws-vault exec my-user --no-session -- aws s3 sync /Users/yabseragebrekidan/Developer/myresumeyabi s3://cloud-resume-yabi
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Yabi</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Yabi</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <section id="profile">
+      <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <filter id="warp-filter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="warpNoise" />
+          <feDisplacementMap in="SourceGraphic" in2="warpNoise" scale="10" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
+      <div class="scroll-bar">
+        <div class="scroll-item">Cloud Computing</div>
+        <div class="scroll-item">DevOps</div>
+        <div class="scroll-item">Kubernetes</div>
+        <div class="scroll-item">Docker</div>
+        <div class="scroll-item">CI/CD</div>
+        <div class="scroll-item">AWS</div>
+        <div class="scroll-item">Agile</div>
+      </div>
+      <div class="animated-text">
+        <div class="line">SOFTWARE ENGINEER 
+        </div>
+        <div class="line">
+          DEVOPS SPECIALIST
+        </div>
+        <div class="line">CLOUD ENTHUSIAST
+          <div class="btn-container">
+            <button
+              class="btn btn-color-2"
+              onclick="window.open('/assets/yabi-resume.pdf')">
+              Download Resume
+            </button>
+            <button class="btn btn-color-1" onclick="location.href='#contact'">
+              Contact Info
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="work-showcase">
+      <div class="work-showcase-title">PROJECTS</div>
+      <div class="card">
+        <img src="yabi.jpg" alt="Project 1" class="card-image" />
+        <div class="card-content">
+          <h3>BANDERA API</h3>
+          <p>Short description of the project. Highlight key features or technologies.</p>
+          <a href="#" class="btn">View Project</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="project2.jpg" alt="Project 2" class="card-image" />
+        <div class="card-content">
+          <h3>Project Title</h3>
+          <p>Short description of the project. Highlight key features or technologies.</p>
+          <a href="#" class="btn">View Project</a>
+        </div>
+      </div>
+    </section>
+    
+
+
+
+
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+  
+          <p><a href="mailto:yabiskywalker@gmail.com">ywgebrek@neiu.edu</a></p>
+        </div>
+        <div class="contact-info-container">
+          <p><a href="https://www.linkedin.com/in/yabi/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="contact nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2023 Yabsera Gebrekidan. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+///
+MEDIA QUERY 
+
+
+/* General Media Query Adjustments */
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: 6rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-containers {
+    flex-wrap: wrap;
+  }
+  #contact,
+  #projects {
+    height: fit-content;
+  }
+}
+
+/* Medium Screens */
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display: none;
+  }
+  #profile {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+  section {
+    margin: 0 5%;
+    padding: 2rem;
+  }
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+  .about-containers {
+    margin-top: 0;
+  }
+}
+
+/* Small Screens */
+@media screen and (max-width: 768px) {
+  #desktop-nav {
+    display: none;
+  }
+
+  .hamburger-menu {
+    position: initial; 
+    display: inline-block;
+}
+  
+  #hamburger-nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #121212;
+    padding: 1rem;
+  }
+  .menu-links {
+    width: 100%;
+    text-align: center;
+    background-color: #121212;
+  }
+  #profile {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+  .animated-text,
+  .line {
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+  .btn-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .work-showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 6vh;
+  }
+  .work-showcase-title {
+    font-size: 3rem;
+  }
+  #contact {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .contact-info-container p {
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Screens */
+@media screen and (max-width: 600px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  .nav-links li a,
+  .contact-info-container p {
+    font-size: 0.8rem;
+  }
+  .animated-text {
+    font-size: 1.5rem;
+  }
+  .work-showcase-title {
+    font-size: 2rem;
+  }
+  .scroll-item {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+  .scroll-content {
+    gap: 10px;
+  }
+
+
+}
+
+
+////////////
+CSS 
+////////////
+
+
+
+
+/* GENERAL */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+* {
+  margin: 0;
+  padding: 0;
+   
+}
+
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+    background-color: #121212; /* Dark mode background */
+    color: #e0e0e0; /* Light text for contrast */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: rgb(85, 85, 85);
+}
+
+/* TRANSITION */
+
+
+
+/* DESKTOP NAV */
+
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo:hover {
+  cursor: default;
+}
+
+/* HAMBURGER MENU */
+
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(221, 221, 221);
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(47, 47, 47, 0.774);
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(224, 224, 224);
+  text-decoration: none;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+  z-index: 9999;
+  
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon span:first-child {
+  opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+/* SECTIONS */
+
+section {
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+.section-container {
+  display: flex;
+}
+
+/* PROFILE SECTION */
+
+#profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+  max-width: 100%;
+}
+/* Scroll bar styling */
+.scroll-bar {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  margin: 10px 0;
+  white-space: nowrap;
+  gap: 15px;
+  position: relative;
+  z-index: 10; /* Ensures it sits above animated-text */
+}
+
+.scroll-bar {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  margin: 10px 0;
+  white-space: nowrap;
+  gap: 15px;
+  position: relative;
+  z-index: 10; /* Ensures it sits above animated-text */
+}
+
+.scroll-item {
+  flex: 0 0 auto;
+  background-color: #2d2d2d;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: scroll-text 10s linear infinite;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.animated-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 6rem;
+  font-weight: bold;
+  display: inline-block;
+  animation: vibrate 2s infinite, warp 2s infinite alternate;
+}
+.line {
+  display: block;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.line:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.line:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.line:nth-child(3) {
+  animation-delay: 1s;
+}
+@keyframes warp {
+  0%, 100% { filter: none; }
+  50% { filter: url(#warp-filter); }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes vibrate {
+  0%, 100% { transform: translate(1, 1); }
+  20% { transform: translate(0px, 0px); }
+  40% { transform: translate(0px, 0px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(-1px, -1px); }
+}
+
+
+.infinity-icon {
+  display: inline-block;
+  position: relative;
+  animation: none;
+}
+
+.glowing-path {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: glow 2s infinite ease-in-out;
+  stroke: #6fff59;
+}
+
+@keyframes glow {
+  0% {
+    stroke-dashoffset: 150;
+    stroke: #ffffff;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke: #00eaff;
+  }
+  100% {
+    stroke-dashoffset: -150;
+    stroke: #ffffff;
+  }
+}
+
+.work-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding-top: 10vh;
+  margin-top: 30%;
+  align-self: center;
+  text-align: center;
+  position: relative;
+
+}
+.work-showcase-title {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 9rem;
+  font-weight: bold;
+
+}
+
+.card {
+  background-color: #00b7ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0);
+  transition: transform 0.3s ease;
+  font-family: 'Arial', sans-serif;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  color: #fff;
+}
+
+.card-content h3 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #6fff59;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  
+}
+
+.btn:hover {
+  background: #4cb34d;
+}
+
+
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+.section__text {
+  align-self: center;
+  text-align: center;
+}
+
+.section__text p {
+  font-weight: 600;
+}
+
+.section__text__p1 {
+  text-align: center;
+}
+
+.section__text__p2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+#socials-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+/* ICONS */
+
+.icon {
+  cursor: pointer;
+  height: 2rem;
+}
+
+/* BUTTONS */
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  filter: none; /* Reset the filter */
+  animation: none; /* Prevent inheriting animations */
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 8rem;
+  border-radius: 2rem;
+
+}
+
+.btn-color-1,
+.btn-color-2 {
+  border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+  background: rgb(0, 217, 255);
+  color: rgb(255, 255, 255);
+}
+
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+  background: none;
+  color: #ffffff;
+}
+
+.btn-color-2:hover {
+  border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-container {
+  gap: 1rem;
+}
+
+/* ABOUT SECTION */
+
+#about {
+  position: relative;
+}
+
+.about-containers {
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.about-details-container {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-containers,
+.about-details-container {
+  display: flex;
+}
+
+.about-pic {
+  border-radius: 2rem;
+}
+
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+}
+
+.details-container {
+  padding: 1.5rem;
+  flex: 1;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+}
+
+.section-container {
+  gap: 4rem;
+  height: 80%;
+}
+
+.section__pic-container {
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+/* EXPERIENCE SECTION */
+
+#experience {
+  position: relative;
+}
+
+.experience-sub-title {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.article-container {
+  display: flex;
+  text-align: initial;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: space-around;
+}
+
+article {
+  display: flex;
+  width: 10rem;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+article .icon {
+  cursor: default;
+}
+
+/* PROJECTS SECTION */
+
+#projects {
+  position: relative;
+}
+
+.color-container {
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
+}
+
+.project-img {
+  border-radius: 2rem;
+  width: 90%;
+  height: 90%;
+}
+
+.project-title {
+  margin: 1rem;
+  color: black;
+}
+
+.project-btn {
+  color: black;
+  border-color: rgb(163, 163, 163);
+}
+
+/* CONTACT */
+
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 25vh;
+  background-color: #5cd9ff00;
+}
+
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: (250, 250, 250);
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.contact-info-container p {
+  font-size: larger;
+}
+
+.contact-icon {
+  cursor: default;
+  
+}
+
+.email-icon {
+  height: 2.5rem;
+}
+
+/* FOOTER SECTION */
+
+footer {
+  height: 26vh;
+  margin: 0 1rem;
+}
+
+footer p {
+  text-align: center;
+}
+

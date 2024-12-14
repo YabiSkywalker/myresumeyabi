@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terraform Code Box</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="code-box">
+    <pre><code>//establishing a vpc called "prod-vpc"
+resource "aws_vpc" "az1-vpc" {
+  cidr_block           = "10.0.0.0/16"
+  enable_dns_support   = "true" #gives you an internal domain name
+  enable_dns_hostnames = "true" #gives you an internal host name
+  #enable_classiclink = "false"
+  instance_tenancy = "default"
+
+  tags = {
+    Name = "${var.common_tags}-vpc"
+  }
+}
+//you need an internet gateway established in order to have a portal to the internet
+resource "aws_internet_gateway" "main-igw" {
+  vpc_id = aws_vpc.az1-vpc.id
+
+  tags = {
+    Name = "prod-igw"
+  }
+}
+//public subnet exclusively to house the NAT gateway, which will point to the internet gateway defined above
+resource "aws_subnet" "public-subnet-public-1" {
+  vpc_id                  = aws_vpc.az1-vpc.id
+  cidr_block              = "10.0.5.0/24"
+  map_public_ip_on_launch = "true" //this is what makes it a "public" subnet
+  availability_zone       = var.aws_availability_zone-2a
+
+  tags = {
+    Name = "public-subnet-1"
+  }
+}
+...
+//rest of your Terraform code goes here
+</code></pre>
+  </div>
+</body>
+</html>

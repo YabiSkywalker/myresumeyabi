@@ -1,0 +1,38 @@
+    body {
+        background-color: black; /* Dark background color */
+        color: #ffffff; /* Text color */
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+    .og {
+
+    }
+    .og2 {
+
+    }
+    .parent {
+        display: flex;
+        flex-direction: column;
+    }
+    .title {
+        font-size: 66px;
+        font-weight: bold;
+        text-align: center;
+
+        overflow: hidden; /* Ensure spans are contained within the title */
+    }
+    .what {
+        margin-left: 10px;
+        margin: 10px;
+        font-weight: bolder;
+    }
+    .color-span {
+        display: inline-block;
+        transition: color 0.5s ease-in-out; /* Smooth color transition */
+    }
+
+

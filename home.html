@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+
+  </head>
+
+
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Yabi</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work-showcase">Experience</a></li>
+          <li><a href="#project-work">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Yabi</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#work-showcase" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#project-work" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+      <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <filter id="warp-filter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="warpNoise" />
+          <feDisplacementMap in="SourceGraphic" in2="warpNoise" scale="10" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
+
+
+
+
+      <section id="profile">
+
+   
+      
+        <div class="animated-text">
+          <div class="line">SOFTWARE ENGINEER</div>
+          <div class="line">DEVOPS SPECIALIST</div>
+          <div class="line">CLOUD ENTHUSIAST</div>
+      
+          <!-- text elements  -->
+          <div class="additional-text">
+            <p>My name is Yabsera, or Yabi (Yah-bee) for short. I'm an Ethiopian born American based 
+              in Chicago, IL USA, and working as an Associate Software Engineer in the Financial
+              Services sector. </p>
+          </div>
+      
+          <div class="btn-container">
+            <button class="btn btn-color-2" onclick="window.open('Res-Yabi.pdf', '_blank')">
+              Resume
+          </button>
+
+          <button onclick="window.location.href='https://github.com/YabiSkywalker/crmMobile'" 
+              class="btn btn-color-2">GitHub</button>
+
+
+              <button onclick="window.location.href='https://www.linkedin.com/in/yabi/'" 
+              class="btn btn-color-2">LinkedIn</button>
+              
+          
+            <button class="btn btn-color-1" onclick="location.href='#contact'">
+              Contact Info
+            </button>
+          </div>
+        </div>
+
+
+        <!-- PING HERE -->
+      
+        <div class="availability-status">
+          <span class="ping-dot"></span>
+          <span class="availability-text">Open to work</span>
+        </div>
+
+
+
+      </section>
+      
+
+      <section id="about">
+        <div class="about-content">
+          <div class="about-image">
+            <img src="yabi.png" alt="Yabi.dev logo" />
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+          </div>
+          
+          <div class="about-text">
+            <h2>About</h2>
+            <p>My journey in tech began at Locusview, a SaaS start-up based out of Tel Aviv, Israel. Locusview is a digital construction management platform that serves utilities companies.</p>
+            <p>Today I am a Software Engineer working at Options Clearing Corporation (OCC). OCC
+              is a clearing house responsible for clearing exchange-listed options. My role at OCC
+              revolves primarily around process automation, and DevOps.</p>
+          </div>
+        </div>
+      </section>
+      
+      
+      
+      
+      
+
+
+
+
+    
+      <section id="work-showcase">
+
+        <div class="experience-container">
+          <!-- Header for Experience -->
+          <div class="experience-logo">
+            PROFESSIONAL EXPERIENCE
+          </div>
+      
+          <!-- OCC Job Showcase -->
+          <div class="experience-entry">
+            <!-- Job Title and Organization -->
+            <div class="job-title">
+              <h3>Associate, Software Engineering - Deployment</h3>
+              <p><strong>Options Clearing Corporation - Chicago, IL</strong></p>
+              <p class="job-dates">February 2023 to Present</p>
+            </div>
+      
+            <!-- Expandable Details -->
+            <div class="job-details">
+              <button class="toggle-details" onclick="toggleDetails('occ-details')">
+                Show More
+              </button>
+              <ul id="occ-details" class="details-content">
+                <li>Orchestrated K8s clusters by configuring and deploying workloads in highly available, fault-tolerant environments.</li>
+                <li>Maintained hybrid cloud environments, serving as a liaison between QA and DevOps teams.</li>
+                <li>Developed concise and scalable Java code for OCC’s proprietary SpringBoot applications.</li>
+                <li>Automated CI/CD pipelines, reducing deployment time by over 60%.</li>
+                <li>Automated test cases using Cucumber BDD, improving software quality and performance.</li>
+                <li>Established deployment team’s GitHub organization, reducing build/test cycle time by 60%.</li>
+                <li>Implemented Active Directory groups for GitHub access control and secure Jenkins service account management.</li>
+              </ul>
+              <p class="key-technologies"><strong>Key Technologies:</strong> Kubernetes, Jenkins, GitHub, Terraform, Java, AWS, Docker, Groovy, Automic UC4, Harness, Active Directory, Forgerock, Cucumber BDD</p>
+            </div>
+          </div>
+
+
+
+          <div class="experience-entry">
+            <!-- Job Title and Organization -->
+            <div class="job-title">
+              <h3>Technical Support Engineer I, II</h3>
+              <p><strong>Locusview Solutions - Chicago, IL</strong></p>
+              <p class="job-dates">January 2022 to February 2023</p>
+            </div>
+      
+            <!-- Expandable Details -->
+            <div class="job-details">
+              <button class="toggle-details" onclick="toggleDetails('locusview-details')">
+                Show More
+              </button>
+              <ul id="locusview-details" class="details-content">
+                <li>Led the support team by managing over 9000 technical support cases achieving a 96% resolution rate with
+                  target SLAs.</li>
+                <li>Developed and maintained detailed technical documentation for both internal tools and client applications,
+                  reducing onboarding time and enabling more efficient troubleshooting for cross-functional teams.</li>
+                <li>Collaborated with development teams to assess, design, and implement database modifications on Locusview
+                  servers, optimizing performance and ensuring system stability.</li>
+                <li>Spearheaded the migration to HubSpot CRM, developing and executing workflow tests, which led to improved
+                  system integration, client data consistency, and more efficient support service delivery.</li>
+                <li>Automated test cases using Cucumber BDD, improving software quality and performance.</li>
+                <li>Enhanced support processes by identifying bottlenecks in ticket resolution workflows and recommending
+                  improvements that reduced issue resolution time.</li>
+              </ul>
+              <p class="key-technologies"><strong>Key Technologies:</strong> Zendesk, HubSpot, Jira, Postman API, Locusview, Kubernetes, AWS EC2, Redis, App Testing, MySQL</p>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+
+
+        <div class="experience-logo">
+          <div class="">TECH STACK</div>
+        </div>
+        <div class="work-showcase-container">
+          <!-- Left Column -->
+          <div class="work-showcase-column">
+            <div class="dropdown">
+              <div class="dropdown-title" onclick="toggleDropdown('dropdown1')">Development</div>
+              <ul id="dropdown1" class="dropdown-content">
+                <li>Java</li>
+                <li>Cucumber BDD</li>
+                <li>Bash</li>
+                <li>JSON</li>
+                <li>YAML</li>
+                <li>HTML5 & CSS</li>
+                <li>YAML</li>
+                <li>Gradle</li>
+                <li>Swagger UI</li>
+              </ul>
+            </div>
+            <div class="dropdown">
+              <div class="dropdown-title" onclick="toggleDropdown('dropdown2')">DevOps Tools & IaC</div>
+              <ul id="dropdown2" class="dropdown-content">
+                <li>AWS Serverless Application Model</li>
+                <li>Terraform</li>
+                <li>Kubernetes</li>
+                <li>Docker</li>
+                <li>Helm</li>
+                <li>Rancher</li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <div class="dropdown-title" onclick="toggleDropdown('dropdown3')">Operating Systems</div>
+              <ul id="dropdown3" class="dropdown-content">
+                <li>Windows</li>
+                <li>Red Hat Enterprise Linux</li>
+                <li>Ubuntu</li>
+              </ul>
+            </div>
+
+          </div>
+      
+          <!-- Right Column  -->
+          <div class="work-showcase-column">
+
+            <div class="dropdown">
+              <div class="dropdown-title" onclick="toggleDropdown('dropdown5')">Cloud</div>
+              <ul id="dropdown5" class="dropdown-content">
+                <li>AWS EC2</li>
+                <li>AWS S3</li>
+                <li>AWS CloudFront</li>
+                <li>AWS Route 53</li>
+                <li>AWS IAM</li>
+              </ul>
+            </div>
+
+
+
+            <div class="dropdown">
+              <div class="dropdown-title" onclick="toggleDropdown('dropdown6')">Networking & Security</div>
+              <ul id="dropdown6" class="dropdown-content">
+                <li>Forgerock</li>
+                <li>Hashicorp Vault</li>
+                <li>Active Directory</li>
+                <li>TCP/IP</li>
+                <li>Firewall Rules</li>
+                <li>APIGEE</li>
+                <li>VPNs & VPCs</li>
+                <li>RESTful APIs</li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <div class="dropdown-title" onclick="toggleDropdown('dropdown7')">Databases & Messaging Systems</div>
+              <ul id="dropdown7" class="dropdown-content">
+                <li>Apache Kafka</li>
+                <li>MySQL</li>
+                <li>MongoDB</li>
+                <li>Couchbase</li>
+                <li>Kafka Watcher</li>
+              </ul>
+            </div>
+
+
+            <div class="dropdown">
+              <div class="dropdown-title" onclick="toggleDropdown('dropdown4')">CI/CD & Versioning</div>
+              <ul id="dropdown4" class="dropdown-content">
+                <li>Jenkins</li>
+                <li>Harness</li>
+                <li>Artifactory</li>
+                <li>Automic UC4</li>
+                <li>Git/GitHub</li>
+              </ul>
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+
+<br>
+<br>
+<br>
+        <div class="experience-logo">
+          EDUCATION
+        </div>
+
+        <div class="experience-entry">
+          <!-- Job Title and Organization -->
+          <div class="job-title">
+            <h3>Northeastern Illinois University</h3>
+            <p><strong>Computer Science, B.S.</strong></p>
+            <p class="job-dates">August 2020 to December 2022</p>
+          </div>
+          <div class="job-title">
+            <h3>City Colleges of Chicago</h3>
+            <p><strong>Computer Science, A.A.</strong></p>
+            <p class="job-dates">August 2017 to June 2020</p>
+          </div>
+        </div>
+        
+        <div class="experience-logo">
+          EXTERNAL CERTIFICATIONS
+        </div>
+        <div class="experience-entry">
+          <!-- Job Title and Organization -->
+          <div class="job-title">
+            <h3>Certified Kubernetes Administrator (CKA)</h3>
+            <p><strong>The Cloud Native Computing Foundation</strong></p>
+            <p class="job-dates">Completed June 16, 2024</p>
+          </div>
+          <div class="job-title">
+            <h3>AWS Certified Solutions Architect Associate (SAA-C03)</h3>
+            <p><strong>Amazon Web Services (AWS)</strong></p>
+            <p class="job-dates">Completed Aug 19, 2023</p>
+          </div>
+
+
+
+          <div class="job-title">
+            <h3>AWS Certified Cloud Practitioner</h3>
+            <p><strong>Amazon Web Services (AWS)</strong></p>
+            <p class="job-dates">Completed Dec 21, 2022</p>
+          </div>
+        </div>
+
+      </section>
+      
+      
+      <section id="project-work">
+        <div class="experience-logo">Project Work</div>
+        <div class="project-cards-container">
+          <!-- Project Card 1 https://6814-2601-241-8500-5f30-147d-4518-427d-e364.ngrok-free.app/swagger-ui/index.html#/ -->
+          <div class="project-card">
+            <img src="Screenshot 2024-12-09 at 3.28.28 PM.png" alt="Project Thumbnail" class="project-image">
+            <h3 class="project-title">Bandera Service</h3>
+            <p class="project-description">
+              Developed a microservice for the purpose of serving as a centralized CRM platform for small Auto Service Centers.
+            </p>
+            <p class="project-technologies">
+              Key Technologies: Java, Swagger UI, JWT, Springboot
+            </p>
+
+             
+
+            <div class="project-button-container">
+              <button onclick="window.location.href='https://6814-2601-241-8500-5f30-147d-4518-427d-e364.ngrok-free.app/swagger-ui/index.html#'" 
+              class="btn btn-color-2">Try it out</button>
+                <button onclick="window.location.href='https://github.com/YabiSkywalker/bandera'" 
+              class="btn btn-color-2">GitHub</button>
+            </div>
+
+             
+
+          </div>
+
+
+          <!-- Project Card 2 -->
+          <div class="project-card">
+            <img src="AppIcon.png" alt="Project Thumbnail" class="project-image">
+            <h3 class="project-title">Bandera UI</h3>
+            <p class="project-description">
+              iOS & Web frontend interfaces to pair with the Bandera API for a unified end user experience.
+            </p>
+            <p class="project-technologies">
+              Key Technologies: Jenkins, GitHub Actions, Terraform
+            </p>
+
+
+            <div class="project-button-container">
+              <button onclick="window.location.href='https://testflight.apple.com/join/Y2sgqg1C'" 
+              class="btn btn-color-2">Try it out</button>
+              <button onclick="window.location.href='https://github.com/YabiSkywalker/crmMobile'" 
+              class="btn btn-color-2">GitHub</button>
+            </div>
+
+
+
+          </div>
+    
+          <!-- Add more cards as needed -->
+        </div>
+      </section>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="contact">
+
+
+    </section>
+
+
+
+
+    <footer>
+      <section class="work-showcase">
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            
+
+
+            <button id="contactButton" class="contact-button">Contact</button>
+
+            <!-- Modal -->
+            <div id="contactModal" class="modal">
+              <div class="modal-content">
+                <h2>Contact Information</h2>
+                <p>Email: <a href="mailto:ywgebrek@neiu.edu">ywgebrek@neiu.edu</a></p>
+                <p>Phone: (773) 804-8920</p>
+                <p>Loop, Chicago, IL 60612</p>
+                <button id="closeModalButton" class="close-button">Close</button>
+              </div>
+            </div>
+            
+
+
+
+
+
+
+
+          </ul>
+        </div>
+      
+        <div class="footer-column">
+          <h4>Connect </h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/yabi/">LinkedIn</a></li>
+            <li><a href="https://github.com/YabiSkywalker">GitHub</a></li>
+          </ul>
+        </div>
+      </section>
+    
+      <section class="footer-bottom">
+        <p>&copy; 2024 Yabi.dev. All rights reserved.</p>
+      </section>
+    </footer>
+    
+    
+
+
+
+
+    <script src="script.js">
+      
+    </script>
+  </body>
+</html>
